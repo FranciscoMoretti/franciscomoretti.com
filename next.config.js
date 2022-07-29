@@ -22,8 +22,12 @@ module.exports = withBundleAnalyzer({
   async redirects() {
     return [
       {
+        source: '/blog/zero-to-nextjs-example-with-wsl2-in-w11',
+        destination: '/zero-to-nextjs-example-with-wsl2-in-w11',
+        permanent: true,
+      },{
         source: '/blog/web-dev-in-windows-11',
-        destination: 'zero-to-nextjs-example-with-wsl2-in-w11',
+        destination: '/zero-to-nextjs-example-with-wsl2-in-w11',
         permanent: true,
       },
     ]
