@@ -18,5 +18,14 @@ module.exports = withBundleAnalyzer({
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;"
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/blog/web-dev-in-windows-11',
+        destination: 'zero-to-nextjs-example-with-wsl2-in-w11',
+        permanent: true,
+      },
+    ]
+  },
 })
