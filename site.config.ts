@@ -63,10 +63,6 @@ export default siteConfig({
     {
       title: 'Clean Code',
       pageId: '503052fcafa74652b442229350d410de'
-    },
-    {
-      title: 'Contact',
-      pageId: '2c1f42aebcbc470db7d89c704c751fad'
     }
   ]
 })
