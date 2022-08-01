@@ -23,7 +23,7 @@ import * as config from 'lib/config'
  * that would've been passed to puppeteer. This makes it much easier to develop
  * and debug issues locally.
  */
-const debugInspectHtml = false
+const debugInspectHtml = true
 
 export default withOGImage<'query', 'id'>({
   template: {
