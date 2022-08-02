@@ -18,7 +18,7 @@ export const PageHead: React.FC<
   title = title ?? site?.name
   description = description ?? site?.description
 
-  const socialImageUrl = createOgImage({title, meta: ""})
+  const socialImageUrl = createOgImage({title, meta: "Francisco Moretti"})
   
   return (
     <Head>
