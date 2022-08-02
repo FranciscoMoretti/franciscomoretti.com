@@ -3,7 +3,6 @@ import * as React from 'react'
 
 import * as types from 'lib/types'
 import * as config from 'lib/config'
-import { getSocialImageUrl } from 'lib/get-social-image-url'
 import { createOgImage } from 'lib/create-og-image'
 
 export const PageHead: React.FC<
@@ -19,7 +18,6 @@ export const PageHead: React.FC<
   title = title ?? site?.name
   description = description ?? site?.description
 
-  // const socialImageUrl = getSocialImageUrl(pageId) || image
   const socialImageUrl = createOgImage({title, meta: ""})
   
   return (
