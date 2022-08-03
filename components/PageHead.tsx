@@ -18,8 +18,9 @@ export const PageHead: React.FC<
   title = title ?? site?.name
   description = description ?? site?.description
 
-  const socialImageUrl = createOgImage({title, meta: "Francisco Moretti"})
-  
+  // const socialImageUrl = createOgImage({title, meta: "Francisco Moretti"})
+  const socialImageUrl = "https://res.cloudinary.com/delba/image/upload/w_1600,h_836,q_100/l_text:Karla_72_bold:(WIP)%2520Automatically%2520Generate%2520Branded%2520Open%2520Graph%2520(OG)%2520Images%2520for%2520Your%2520Blog%2520Posts,co_rgb:ffe4e6,c_fit,w_1400,h_240/fl_layer_apply,g_south_west,x_100,y_180/l_text:Karla_48:delba.dev%2520%25C2%25B7%2520Jul%25205,co_rgb:ffe4e680,c_fit,w_1400/fl_layer_apply,g_south_west,x_100,y_100/l_twitter_name:delba_oliveira/c_thumb,g_face,r_max,w_380,h_380,q_100/fl_layer_apply,w_140,g_north_west,x_100,y_100/grain-gradient.png"
+
   return (
     <Head>
       <meta charSet='utf-8' />
