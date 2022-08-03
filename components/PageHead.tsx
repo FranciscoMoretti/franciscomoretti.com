@@ -58,6 +58,7 @@ export const PageHead: React.FC<
           <meta property='og:image' content={socialImageUrl} />
           <meta property="og:image:width" content="1600"/>
           <meta property="og:image:height" content="836"/>
+          <meta property="og:image:alt" content={title}/>
         </>
       ) : (
         <meta name='twitter:card' content='summary' />
