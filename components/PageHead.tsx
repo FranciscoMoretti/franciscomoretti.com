@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import * as types from 'lib/types'
 import * as config from 'lib/config'
-import { createOgImage } from 'lib/create-og-image'
+// import { createOgImage } from 'lib/create-og-image'
 
 export const PageHead: React.FC<
   types.PageProps & {
