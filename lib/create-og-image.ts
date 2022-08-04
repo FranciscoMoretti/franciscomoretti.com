@@ -19,7 +19,7 @@ export const createOgImage = ({
    
       // META
       // Karla, but smaller
-      `l_text:Karla_36:${e(meta)},co_rgb:080C0C80,c_fit,w_1000`,
+      `l_text:Karla_36:${e(meta)},co_rgb:080C0C90,c_fit,w_1000`,
       // Positioning
       `fl_layer_apply,g_south_west,x_100,y_100`,
    
