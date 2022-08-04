@@ -32,6 +32,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
 
 import styles from './styles.module.css'
+import { getPagePublishedDate } from 'lib/get-page-published-date'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -247,6 +248,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
+  const publishedDate =
+    getPageProperty<number>('Published', block, recordMap)
+
   return (
     <>
       <PageHead
@@ -254,6 +258,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         site={site}
         title={title}
         description={socialDescription}
+        publishedDate={getPagePublishedDate(block, recordMap)}
         image={socialImage}
         url={canonicalPageUrl}
       />

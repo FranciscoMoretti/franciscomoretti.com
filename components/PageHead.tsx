@@ -9,16 +9,23 @@ export const PageHead: React.FC<
   types.PageProps & {
     title?: string
     description?: string
+    publishedDate?: Date
     image?: string
     url?: string
   }
-> = ({ site, title, description, url }) => {
+> = ({ site, title, description, publishedDate, url }) => {
   const rssFeedUrl = `${config.host}/feed`
 
   title = title ?? site?.name
   description = description ?? site?.description
-
-  const socialImageUrl = createOgImage({title, meta: "Francisco Moretti"})
+  let metadata = ["Francisco Moretti"] 
+  if (publishedDate){
+    metadata.push(publishedDate.toLocaleString("en-US", {"dateStyle": "medium"}))
+  }
+  
+  const metadataText = metadata.join(" · ")
+  
+  const socialImageUrl = createOgImage({title, meta: metadataText})
   
   return (
     <Head>
