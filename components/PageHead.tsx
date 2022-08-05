@@ -103,7 +103,7 @@ export const PageHead: React.FC<
 }
 
 function sanitizeHashtag(hashtag: string): string {
-  if (hashtag.startsWith("#")){
+  if (!hashtag.startsWith("#")){
     hashtag = "#" + hashtag
   }
   if(hashtag.includes(" ")){
