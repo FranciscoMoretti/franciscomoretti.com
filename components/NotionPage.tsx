@@ -249,9 +249,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
     getPageProperty<string>('Description', block, recordMap) ||
     config.description
 
-  const publishedDate =
-    getPageProperty<number>('Published', block, recordMap)
-
   return (
     <>
       <PageHead
