@@ -109,6 +109,9 @@ function sanitizeHashtag(hashtag: string): string {
   if(hashtag.includes(" ")){
     hashtag  = hashtag.replace(/ /g, '')
   }
-  return hashtag
+  if(hashtag.includes(".")){
+    hashtag  = hashtag.replace(/\./g,' ')
+  }
+  return hashtag.toLowerCase()
 }
 
