@@ -19,7 +19,10 @@ export const PageHead: React.FC<
 
   title = title ?? site?.name
   description = description ?? site?.description
-  const metadata = [site.domain] 
+  const metadata = []
+  if (site){
+    metadata.push(site.domain)
+  } 
   if (publishedDate){
     metadata.push(publishedDate.toLocaleString("en-US", {"dateStyle": "medium"}))
   }
