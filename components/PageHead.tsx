@@ -25,7 +25,7 @@ export const PageHead: React.FC<
   }
   if (tags){
     // TODO: limit the number of hashtags to display in order to fit in the available line length.
-    tags = tags.map(x => x.startsWith("#") ? x: "#" + x);
+    tags = tags.map(x => sanitizeHashtag(x));
     metadata.push(...tags)
   }
   
@@ -98,3 +98,14 @@ export const PageHead: React.FC<
     </Head>
   )
 }
+
+function sanitizeHashtag(hashtag: string): string {
+  if (hashtag.startsWith("#")){
+    hashtag = "#" + hashtag
+  }
+  if(hashtag.includes(" ")){
+    hashtag  = hashtag.replace(/ /g, '')
+  }
+  return hashtag
+}
+
