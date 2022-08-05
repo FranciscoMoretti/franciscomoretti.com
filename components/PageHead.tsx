@@ -10,10 +10,11 @@ export const PageHead: React.FC<
     title?: string
     description?: string
     publishedDate?: Date
+    tags?: string[]
     image?: string
     url?: string
   }
-> = ({ site, title, description, publishedDate, url }) => {
+> = ({ site, title, description, publishedDate, tags, url }) => {
   const rssFeedUrl = `${config.host}/feed`
 
   title = title ?? site?.name
@@ -21,6 +22,11 @@ export const PageHead: React.FC<
   let metadata = [site.domain] 
   if (publishedDate){
     metadata.push(publishedDate.toLocaleString("en-US", {"dateStyle": "medium"}))
+  }
+  if (tags){
+    // TODO: limit the number of hashtags to display in order to fit in the available line length.
+    tags = tags.map(x => x.startsWith("#") ? x: "#" + x);
+    metadata.push(...tags)
   }
   
   const metadataText = metadata.join(" · ")

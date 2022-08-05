@@ -33,6 +33,7 @@ import { GitHubShareButton } from './GitHubShareButton'
 
 import styles from './styles.module.css'
 import { getPagePublishedDate } from 'lib/get-page-published-date'
+import { getPageTags } from 'lib/get-page-tags'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -259,6 +260,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         title={title}
         description={socialDescription}
         publishedDate={getPagePublishedDate(block, recordMap)}
+        tags={getPageTags(block, recordMap)}
         image={socialImage}
         url={canonicalPageUrl}
       />
