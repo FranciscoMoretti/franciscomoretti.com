@@ -2,7 +2,7 @@ import { createOgImage } from './create-og-image'
 
 
 export function getSocialImageUrl(domain: string, publishedDate: Date, tags: string[], title: string) {
-  let metadata = createImageMetadata(domain, publishedDate, tags))
+  let metadata = createImageMetadata(domain, publishedDate, tags)
   return createOgImage({ title, meta: metadata })
 }
 
