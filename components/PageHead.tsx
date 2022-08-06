@@ -19,7 +19,7 @@ export const PageHead: React.FC<
 
   title = title ?? site?.name
   description = description ?? site?.description
-  const socialImageUrl = getSocialImageOfPage(site, publishedDate, tags, title) || image
+  const socialImageUrl = getSocialImageOfPage(site.domain, publishedDate, tags, title) || image
   
   return (
     <Head>
@@ -87,10 +87,10 @@ export const PageHead: React.FC<
   )
 }
 
-function getSocialImageOfPage(site: types.Site, publishedDate: Date, tags: string[], title: string) {
+function getSocialImageOfPage(domain: string, publishedDate: Date, tags: string[], title: string) {
   const metadata = []
-  if (site) {
-    metadata.push(site.domain)
+  if (domain) {
+    metadata.push(domain)
   }
   if (publishedDate) {
     metadata.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
