@@ -15,7 +15,7 @@ export const createOgImage = ({
       // Karla google font in light rose
       `l_text:Karla_54_bold:${e(title)},co_rgb:080C0C,c_fit,w_1000,h_240`,
       // Positioning
-      `fl_layer_apply,g_south_west,x_100,y_180`,
+      `fl_layer_apply,g_south_west,x_100,y_200`,
    
       // META
       // Karla, but smaller
