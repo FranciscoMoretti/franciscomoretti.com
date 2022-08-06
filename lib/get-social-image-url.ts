@@ -2,23 +2,26 @@ import { createOgImage } from './create-og-image'
 
 
 export function getSocialImageUrl(domain: string, publishedDate: Date, tags: string[], title: string) {
-  const metadata = []
+  let metadata = createImageMetadata(domain, publishedDate, tags))
+  return createOgImage({ title, meta: metadata })
+}
+
+function createImageMetadata(domain: string, publishedDate: Date, tags: string[]) {
+  const metadataTerms = []
   if (domain) {
-    metadata.push(domain)
+    metadataTerms.push(domain)
   }
   if (publishedDate) {
-    metadata.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
+    metadataTerms.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
   }
   if (tags) {
     // TODO: limit the number of hashtags to display in order to fit in the available line length.
     tags = tags.map(x => sanitizeHashtag(x))
-    metadata.push(...tags)
+    metadataTerms.push(...tags)
   }
 
-  const metadataText = metadata.join(" · ")
-
-  const socialImageUrl = createOgImage({ title, meta: metadataText })
-  return socialImageUrl
+  const metadata = metadataTerms.join(" · ")
+  return metadata
 }
 
 function sanitizeHashtag(hashtag: string): string {
