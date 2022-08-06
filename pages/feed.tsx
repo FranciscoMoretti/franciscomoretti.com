@@ -11,7 +11,7 @@ import { ExtendedRecordMap } from 'notion-types'
 import * as config from 'lib/config'
 import { getSiteMap } from 'lib/get-site-map'
 import { getCanonicalPageUrl } from 'lib/map-page-url'
-import { getSocialImageUrl } from 'lib/get-social-image-url'
+import { getPageSocialImageUrl } from 'lib/get-page-social-image-url'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   if (req.method !== 'GET') {
@@ -68,7 +68,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
       : publishedTime
       ? new Date(publishedTime)
       : undefined
-    const socialImageUrl = getSocialImageUrl(pageId)
+    const socialImageUrl = getPageSocialImageUrl(block, recordMap, config.site.domain)
 
     feed.item({
       title,

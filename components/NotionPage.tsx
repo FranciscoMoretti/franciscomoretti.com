@@ -32,9 +32,7 @@ import { NotionPageHeader } from './NotionPageHeader'
 import { GitHubShareButton } from './GitHubShareButton'
 
 import styles from './styles.module.css'
-import { getPagePublishedDate } from 'lib/get-page-published-date'
-import { getPageTags } from 'lib/get-page-tags'
-import { getSocialImageUrl } from 'lib/get-social-image-url'
+import { getPageSocialImageUrl } from 'lib/get-page-social-image-url'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -239,12 +237,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
   const canonicalPageUrl =
     !config.isDev && getCanonicalPageUrl(site, recordMap)(pageId)
 
-  const socialImage = getSocialImageUrl(
-    site.domain,
-    getPagePublishedDate(block, recordMap),
-    getPageTags(block, recordMap),
-    title
-    ) || mapImageUrl(
+  const socialImage = getPageSocialImageUrl(block, recordMap, site.domain) ||
+    mapImageUrl(
       getPageProperty<string>('Social Image', block, recordMap) ||
         (block as PageBlock).format?.page_cover ||
         config.defaultPageCover,

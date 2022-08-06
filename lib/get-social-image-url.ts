@@ -2,11 +2,11 @@ import { createOgImage } from './create-og-image'
 
 
 export function getSocialImageUrl(domain: string, publishedDate: Date, tags: string[], title: string) {
-  let metadata = createImageMetadata(domain, publishedDate, tags)
+  const metadata = createImageMetadata(domain, publishedDate, tags)
   return createOgImage({ title, meta: metadata })
 }
 
-function createImageMetadata(domain: string, publishedDate: Date, tags: string[]) {
+export function createImageMetadata(domain: string, publishedDate: Date, tags: string[]) {
   const metadataTerms = []
   if (domain) {
     metadataTerms.push(domain)
