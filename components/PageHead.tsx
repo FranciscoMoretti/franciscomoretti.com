@@ -3,7 +3,6 @@ import * as React from 'react'
 
 import * as types from 'lib/types'
 import * as config from 'lib/config'
-import { getSocialImageUrl } from 'lib/get-social-image-url'
 
 export const PageHead: React.FC<
   types.PageProps & {
@@ -14,13 +13,13 @@ export const PageHead: React.FC<
     image?: string
     url?: string
   }
-> = ({ site, title, description, publishedDate, tags, image, url }) => {
+> = ({ site, title, description, image, url }) => {
   const rssFeedUrl = `${config.host}/feed`
 
   title = title ?? site?.name
   description = description ?? site?.description
-  const socialImageUrl = getSocialImageUrl(site.domain, publishedDate, tags, title) || image
-  
+  const socialImageUrl = image || site?.image || ""
+
   return (
     <Head>
       <meta charSet='utf-8' />
