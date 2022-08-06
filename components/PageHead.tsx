@@ -14,27 +14,12 @@ export const PageHead: React.FC<
     image?: string
     url?: string
   }
-> = ({ site, title, description, publishedDate, tags, url }) => {
+> = ({ site, title, description, publishedDate, tags, image, url }) => {
   const rssFeedUrl = `${config.host}/feed`
 
   title = title ?? site?.name
   description = description ?? site?.description
-  const metadata = []
-  if (site){
-    metadata.push(site.domain)
-  } 
-  if (publishedDate){
-    metadata.push(publishedDate.toLocaleString("en-US", {"dateStyle": "medium"}))
-  }
-  if (tags){
-    // TODO: limit the number of hashtags to display in order to fit in the available line length.
-    tags = tags.map(x => sanitizeHashtag(x));
-    metadata.push(...tags)
-  }
-  
-  const metadataText = metadata.join(" · ")
-  
-  const socialImageUrl = createOgImage({title, meta: metadataText})
+  const socialImageUrl = getSocialImageOfPage(site, publishedDate, tags, title) || image
   
   return (
     <Head>
@@ -100,6 +85,26 @@ export const PageHead: React.FC<
       <title>{title}</title>
     </Head>
   )
+}
+
+function getSocialImageOfPage(site: types.Site, publishedDate: Date, tags: string[], title: string) {
+  const metadata = []
+  if (site) {
+    metadata.push(site.domain)
+  }
+  if (publishedDate) {
+    metadata.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
+  }
+  if (tags) {
+    // TODO: limit the number of hashtags to display in order to fit in the available line length.
+    tags = tags.map(x => sanitizeHashtag(x))
+    metadata.push(...tags)
+  }
+
+  const metadataText = metadata.join(" · ")
+
+  const socialImageUrl = createOgImage({ title, meta: metadataText })
+  return socialImageUrl
 }
 
 function sanitizeHashtag(hashtag: string): string {
