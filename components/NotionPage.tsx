@@ -261,8 +261,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
         site={site}
         title={title}
         description={socialDescription}
-        publishedDate={getPagePublishedDate(block, recordMap)}
-        tags={getPageTags(block, recordMap)}
         image={socialImage}
         url={canonicalPageUrl}
       />

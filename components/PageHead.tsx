@@ -8,8 +8,6 @@ export const PageHead: React.FC<
   types.PageProps & {
     title?: string
     description?: string
-    publishedDate?: Date
-    tags?: string[]
     image?: string
     url?: string
   }
