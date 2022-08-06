@@ -3,7 +3,7 @@ import * as React from 'react'
 
 import * as types from 'lib/types'
 import * as config from 'lib/config'
-import { createOgImage } from 'lib/create-og-image'
+import { getSocialImageUrl } from 'lib/get-social-image-url'
 
 export const PageHead: React.FC<
   types.PageProps & {
@@ -19,7 +19,7 @@ export const PageHead: React.FC<
 
   title = title ?? site?.name
   description = description ?? site?.description
-  const socialImageUrl = getSocialImageOfPage(site.domain, publishedDate, tags, title) || image
+  const socialImageUrl = getSocialImageUrl(site.domain, publishedDate, tags, title) || image
   
   return (
     <Head>
@@ -85,38 +85,5 @@ export const PageHead: React.FC<
       <title>{title}</title>
     </Head>
   )
-}
-
-function getSocialImageOfPage(domain: string, publishedDate: Date, tags: string[], title: string) {
-  const metadata = []
-  if (domain) {
-    metadata.push(domain)
-  }
-  if (publishedDate) {
-    metadata.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
-  }
-  if (tags) {
-    // TODO: limit the number of hashtags to display in order to fit in the available line length.
-    tags = tags.map(x => sanitizeHashtag(x))
-    metadata.push(...tags)
-  }
-
-  const metadataText = metadata.join(" · ")
-
-  const socialImageUrl = createOgImage({ title, meta: metadataText })
-  return socialImageUrl
-}
-
-function sanitizeHashtag(hashtag: string): string {
-  if (!hashtag.startsWith("#")){
-    hashtag = "#" + hashtag
-  }
-  if(hashtag.includes(" ")){
-    hashtag  = hashtag.replace(/ /g, '')
-  }
-  if(hashtag.includes(".")){
-    hashtag  = hashtag.replace(/\./g,' ')
-  }
-  return hashtag.toLowerCase()
 }
 
