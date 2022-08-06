@@ -9,7 +9,7 @@ export const createOgImage = ({
       // ACCOUNT PREFIX
       `https://res.cloudinary.com/franciscomoretti/image/upload`,
       // Composed Image Transformations
-      `w_1200,h_630,q_100`,
+      `w_1200,h_630,q_90`,
    
       // TITLE
       // Karla google font in light rose
