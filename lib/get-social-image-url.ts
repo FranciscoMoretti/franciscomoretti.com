@@ -1,38 +1,16 @@
-import { createOgImage } from './create-og-image'
+import { api, host } from './config'
 
+export function getSocialImageUrl(pageId: string) {
+  try {
+    const url = new URL(api.getSocialImage, host)
 
-export function getSocialImageUrl(domain: string, publishedDate: Date, tags: string[], title: string) {
-  const metadata = createImageMetadata(domain, publishedDate, tags)
-  return createOgImage({ title, meta: metadata })
-}
-
-export function createImageMetadata(domain: string, publishedDate: Date, tags: string[]) {
-  const metadataTerms = []
-  if (domain) {
-    metadataTerms.push(domain)
-  }
-  if (publishedDate) {
-    metadataTerms.push(publishedDate.toLocaleString("en-US", { "dateStyle": "medium" }))
-  }
-  if (tags) {
-    // TODO: limit the number of hashtags to display in order to fit in the available line length.
-    tags = tags.map(x => sanitizeHashtag(x))
-    metadataTerms.push(...tags)
+    if (pageId) {
+      url.searchParams.set('id', pageId)
+      return url.toString()
+    }
+  } catch (err) {
+    console.warn('error invalid social image url', pageId, err.message)
   }
 
-  const metadata = metadataTerms.join(" · ")
-  return metadata
-}
-
-function sanitizeHashtag(hashtag: string): string {
-  if (!hashtag.startsWith("#")){
-    hashtag = "#" + hashtag
-  }
-  if(hashtag.includes(" ")){
-    hashtag  = hashtag.replace(/ /g, '')
-  }
-  if(hashtag.includes(".")){
-    hashtag  = hashtag.replace(/\./g,' ')
-  }
-  return hashtag.toLowerCase()
+  return null
 }
