@@ -11,7 +11,6 @@ import { ExtendedRecordMap } from 'notion-types'
 import * as config from 'lib/config'
 import { getSiteMap } from 'lib/get-site-map'
 import { getCanonicalPageUrl } from 'lib/map-page-url'
-import { createPageSocialImageUrl } from 'lib/get-page-social-image-url'
 import { getSocialImageUrl } from 'lib/get-social-image-url'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
