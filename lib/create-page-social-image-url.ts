@@ -7,11 +7,11 @@ import { createSocialImageUrl } from './create-social-image-url'
 
 export function createPageSocialImageUrl(block: Block, recordMap: ExtendedRecordMap, domain: string, twitter: string) {
   return createSocialImageUrl(
-        domain,
-        getPagePublishedDate(block, recordMap),
-        getPageTags(block, recordMap),
-        getBlockTitle(block, recordMap),
-        twitter
-      )
+    getPagePublishedDate(block, recordMap),
+    getPageTags(block, recordMap),
+    getBlockTitle(block, recordMap),
+    domain,
+    twitter
+    )
 }
 

@@ -2,7 +2,7 @@ import { createOgImage } from './create-og-image'
 
 
 export function createSocialImageUrl(
-  domain: string, publishedDate: Date, tags: string[], title: string, twitter: string) {
+  publishedDate: Date, tags: string[], title: string, domain: string, twitter: string) {
   const metadata = createImageMetadata(domain, publishedDate, tags)
   return createOgImage({ title, meta: metadata , twitter: twitter})
 }
