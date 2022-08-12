@@ -124,14 +124,16 @@ Dark mode is fully supported and can be toggled via the sun / moon icon in the f
 ## Automatic Social Images
 
 <p align="center">
-  <img alt="Example social image" src="https://user-images.githubusercontent.com/552829/162001133-34d4cf24-123a-4569-a540-f683b22830d1.jpeg" width="600">
+  <img alt="Example social image" src="public/example_social-image.png" width="600">
 </p>
 
 All Open Graph and social meta tags are generated from your Notion content, which makes social sharing look professional by default.
 
-Social images are generated automatically using headless chrome. You can tweak the default React template for social images by editing [api/social-images.tsx](./pages/api/social-image.tsx).
+Social images are generated automatically using [Cloudinary](https://cloudinary.com/). You can tweak the default React template for social images by editing [lib/create-og-image.ts](./lib/create-og-image.ts).
 
-You can view an example social image live in production [here](https://transitivebullsh.it/api/social-image?id=dfc7f709-ae3e-42c6-9292-f6543d5586f0).
+Set up your own image by creating a Cloudinary account.
+
+You can view an example social image live in production [here](https://www.franciscomoretti.com/api/social-image?id=b0405f73-026a-46a3-84ae-170c5918f8e7).
 
 ## Automatic Table of Contents
 
