@@ -14,13 +14,13 @@ export const createOgImage = ({
       `w_1200,h_630,q_90`,
    
       // TITLE
-      // Karla google font in light rose
+      // Karla google font in dark grey
       `l_text:Karla_54_bold:${e(title)},co_rgb:0C0C0C,c_fit,w_${1200-2*padding},h_140`,
       // Positioning
       `fl_layer_apply,g_north_west,x_${padding},y_${padding}`,
    
       // META
-      // Karla, but smaller
+      // Karla, but smaller and lighter
       `l_text:Karla_36:${e(meta)},co_rgb:0C0C0CB0,c_fit,w_${1200-2*padding}`,
       // Positioning
       `fl_layer_apply,g_north_west,x_${padding},y_250`,
