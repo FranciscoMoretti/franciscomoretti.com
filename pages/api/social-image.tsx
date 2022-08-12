@@ -52,7 +52,7 @@ export default async function withOGImage(request: NextApiRequest, response: Nex
     'Content-Type',
     type ? `image/${type}` : 'image/png',
   )
-  // response.setHeader('Cache-Control', cacheControl)
+  response.setHeader('Cache-Control', cacheControl)
   response.write(buffer)
   response.end()
 }
