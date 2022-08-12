@@ -31,7 +31,7 @@ export const createOgImage = ({
       // Transformatio``ns
       `c_thumb,g_face,r_max,w_380,h_380,q_100,bo_8px_solid_rgb:0C0C0C`,
       // Positioning
-      `fl_layer_apply,w_160,g_south_west,x_${padding},y_${padding}`,
+      `fl_layer_apply,w_170,g_south_west,x_${padding},y_${padding}`,
    
       // BG
       `lego_social_image_background.png`,
