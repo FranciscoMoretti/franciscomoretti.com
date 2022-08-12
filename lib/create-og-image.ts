@@ -5,7 +5,7 @@ export const createOgImage = ({
   }: {
     title: string
     meta: string,
-    padding: number,
+    padding?: number,
   }) =>
     [
       // ACCOUNT PREFIX
