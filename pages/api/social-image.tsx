@@ -43,7 +43,7 @@ export default async function withOGImage(request: NextApiRequest, response: Nex
     throw new Error('Invalid recordMap for page')
   }
 
-  const imageUrl = createPageSocialImageUrl(block, recordMap, config.domain)
+  const imageUrl = createPageSocialImageUrl(block, recordMap, config.domain, config.twitter)
     
   const imageArrayBuffer = await getArrayBuffer(imageUrl);
   const buffer = Buffer.from(imageArrayBuffer)

@@ -1,10 +1,12 @@
 export const createOgImage = ({
     title,
     meta,
+    twitter,
     padding = 80,
   }: {
     title: string
     meta: string,
+    twitter: string,
     padding?: number,
   }) =>
     [
@@ -27,7 +29,7 @@ export const createOgImage = ({
    
       // PROFILE IMAGE
       // dynamically fetched from my twitter profile
-      `l_twitter_name:franmoretti_`,
+      `l_twitter_name:${twitter}`,
       // Transformatio``ns
       `c_thumb,g_face,r_max,w_380,h_380,q_100,bo_8px_solid_rgb:0C0C0C`,
       // Positioning
