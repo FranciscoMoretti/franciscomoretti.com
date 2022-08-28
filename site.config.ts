@@ -61,7 +61,7 @@ export default siteConfig({
       pageId: '304a0518f6034977a59e10a5122aa261'
     },
     {
-      title: 'Clean Code',
+      title: 'Code Tips',
       pageId: '503052fcafa74652b442229350d410de'
     }
   ]
