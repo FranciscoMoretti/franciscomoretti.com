@@ -31,10 +31,17 @@ export const createOgImage = ({
       // dynamically fetched from my twitter profile
       `l_twitter_name:${twitter}`,
       // Transformatio``ns
-      `c_thumb,g_face,r_max,w_380,h_380,q_100,bo_8px_solid_rgb:0C0C0C`,
+      `c_thumb,g_face,r_max,w_380,h_380,q_100,bo_8px_solid_rgb:178FC5`,
       // Positioning
       `fl_layer_apply,w_170,g_south_west,x_${padding},y_${padding}`,
    
+      // LOGO IMAGE
+      `l_image:logo.svg`,
+      // Transformatio``ns
+      `c_thumb,w_52,q_100`,
+      // Positioning
+      `fl_layer_apply,w_52,g_south_west,x_${padding},y_${padding}`,
+
       // BG
       `lego_social_image_background.png`,
    
