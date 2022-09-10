@@ -29,6 +29,10 @@ module.exports = withBundleAnalyzer({
         source: '/blog/web-dev-in-windows-11',
         destination: '/zero-to-nextjs-example-with-wsl2-in-w11',
         permanent: true,
+      },{
+        source: '/clean-code-tips',
+        destination: '/code-tips',
+        permanent: true,
       },
     ]
   },
