@@ -33,6 +33,10 @@ module.exports = withBundleAnalyzer({
         source: '/clean-code-tips',
         destination: '/code-tips',
         permanent: true,
+      },{
+        source: '/talk/bFSnXNIsK4A',
+        destination: '/',
+        permanent: true,
       },
     ]
   },
