@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Francisco Moretti',
-  domain: 'franciscomoretti.com',
+  domain: 'www.franciscomoretti.com',
   author: 'Francisco Moretti',
 
   // open graph metadata (optional)
