@@ -1,9 +1,9 @@
-import Head from 'next/head'
 import * as React from 'react'
+import Head from 'next/head'
 
-import * as types from 'lib/types'
-import * as config from 'lib/config'
-import { getSocialImageUrl } from 'lib/get-social-image-url'
+import * as config from '@/lib/config'
+import * as types from '@/lib/types'
+import { getSocialImageUrl } from '@/lib/get-social-image-url'
 
 export const PageHead: React.FC<
   types.PageProps & {
@@ -75,6 +75,7 @@ export const PageHead: React.FC<
         href={rssFeedUrl}
         title={site?.name}
       />
+      <meta name='follow.it-verification-code' content='c0A1rAARM3FC2XRfMAke' />
 
       <meta property='og:title' content={title} />
       <meta name='twitter:title' content={title} />

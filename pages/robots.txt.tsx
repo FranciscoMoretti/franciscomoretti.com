@@ -1,5 +1,6 @@
 import type { GetServerSideProps } from 'next'
-import { host } from 'lib/config'
+
+import { host } from '@/lib/config'
 
 export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
   if (req.method !== 'GET') {
@@ -13,8 +14,11 @@ export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
     }
   }
 
-  // cache for up to one day
-  res.setHeader('Cache-Control', 'public, max-age=86400, immutable')
+  // cache at vercel edge for up to one day
+  res.setHeader(
+    'Cache-Control',
+    'max-age=0, s-maxage=86400, stale-while-revalidate=3600'
+  )
   res.setHeader('Content-Type', 'text/plain')
 
   // only allow the site to be crawlable on the production deployment
