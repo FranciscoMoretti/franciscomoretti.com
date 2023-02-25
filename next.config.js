@@ -6,6 +6,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 module.exports = withBundleAnalyzer({
   staticPageGenerationTimeout: 300,
   images: {
+    // Disable image optimization because notion changes the images URLs frequently and that triggers a lot of
+    // costly optimizations 
+    unoptimized: true,
     domains: [
       'www.notion.so',
       'notion.so',
