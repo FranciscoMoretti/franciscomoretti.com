@@ -8,7 +8,10 @@ module.exports = withBundleAnalyzer({
   images: {
     // Disable image optimization because notion changes the images URLs frequently and that triggers a lot of
     // costly optimizations 
-    unoptimized: true,
+    // unoptimized: true,
+    // Maybe fewer sizes is enough
+    deviceSizes: [640, 1080],
+
     domains: [
       'www.notion.so',
       'notion.so',
