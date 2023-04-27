@@ -1,10 +1,7 @@
-<p align="center">
-  <a href="https://transitivebullsh.it/nextjs-notion-starter-kit">
-    <img alt="Example article page" src="https://user-images.githubusercontent.com/552829/160132094-12875e09-41ec-450a-80fc-ae8cd488129d.jpg" width="689">
-  </a>
-</p>
+# Personal site (Archived)
+Migrated to https://github.com/FranciscoMoretti/site
 
-# Personal site
+
 ## Intro
 
 This repo is what I use to power my personal blog and portfolio site [franciscomoretti.com](https://www.franciscomoretti.com/).
